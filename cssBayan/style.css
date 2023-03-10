@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1440px;
+    margin: 0 auto;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;,
+}
+
+.hr_line {
+	margin: 10px 0;
+	height: 0;
+	border: none;
+	border-top: 2px solid #adadad;
+}
+
+h1 {
+    margin: 0 auto;
+}
+
+.img-mem {
+    display:none;
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 10px 0;
+    color: blue;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+p:hover + .img-mem {
+    color: black;
+    display: block;
+    max-height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1;
+    transition: 1s;
+}
