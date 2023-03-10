@@ -10,7 +10,7 @@
 }
 
 .hr_line {
-	margin: 10px 0;
+	margin: 0.8em 0;
 	height: 0;
 	border: none;
 	border-top: 2px solid #adadad;
@@ -20,24 +20,47 @@ h1 {
     margin: 0 auto;
 }
 
-.img-mem {
-    display:none;
-    margin-bottom: 10px;
-}
-
-p {
-    margin: 10px 0;
-    color: blue;
-    font-size: 1.5em;
+.mem-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     cursor: pointer;
 }
 
-p:hover + .img-mem {
-    color: black;
+.plus-img {
+    display: none;
+}
+
+.img-mem {
+    display:none;
+    margin-bottom: 0.8em;
+}
+
+p {
+    margin: 0.8em 0;
+    color: blue;
+    font-size: 1.2em;
+}
+
+.mem-block:hover + .img-mem {
     display: block;
-    max-height: 400px;
+    max-height: 25em;
     margin-left: auto;
     margin-right: auto;
-    opacity: 1;
-    transition: 1s;
+}
+
+.mem-block::after + .img-mem {
+    display: block;
+    max-height: 25em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container:hover .plus-img {
+    display: block;
+    width: 1.2em;
+}
+
+.mem-block::after .plus-img {
+    transform: rotate(45deg);
 }
