@@ -1,66 +1,97 @@
 *{
     margin: 0;
     padding: 0;
+    background-color: #dddddd;
 }
 
-.container {
-    width: 1440px;
+.main, h1, .hr-line {
+    width: 1200px;
     margin: 0 auto;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;,
-}
-
-.hr_line {
-	margin: 0.8em 0;
-	height: 0;
-	border: none;
-	border-top: 2px solid #adadad;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 h1 {
-    margin: 0 auto;
+    font-size: 3em;
+}
+
+.title {
+    margin: 0.8em 0;
+    color: blue;
+    font-size: 2em;
+}
+
+.main:hover .title {
+    color: rgb(0, 0, 0);
 }
 
 .mem-block {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
+}
+
+label input:checked~
+.mem-block, title {
+    color: rgb(0, 0, 0);
+}
+
+input {
+    position: absolute;
+    left: -9991px;
+}
+
+.section, .title, .img-mem {
     cursor: pointer;
 }
 
+/*plus-img*/
+
 .plus-img {
-    display: none;
+    content: url('assests/plus.svg');
+    width: 2em;
+    transform: rotate(0deg);
+    transition: .4s;
+    opacity: 0;
 }
+
+.main:hover .plus-img {
+    opacity: 1;
+}
+
+.section:hover .plus-img {
+    transform: rotate(45deg);
+}
+
+label input:checked~
+.mem-block .plus-img {
+    transform: rotate(45deg);
+}
+
+.mem-block:checked + .plus-img::after {
+    content: url('assests/cross.svg');
+}
+
+/*img-mem*/
 
 .img-mem {
-    display:none;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
     margin-bottom: 0.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-p {
-    margin: 0.8em 0;
-    color: blue;
-    font-size: 1.2em;
+.section:hover .img-mem {
+    height: 50em;
 }
 
-.mem-block:hover + .img-mem {
-    display: block;
-    max-height: 25em;
-    margin-left: auto;
-    margin-right: auto;
+label input:checked~
+.img-mem {
+    height: 50em;
 }
 
-.mem-block::after + .img-mem {
-    display: block;
-    max-height: 25em;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.container:hover .plus-img {
-    display: block;
-    width: 1.2em;
-}
-
-.mem-block::after .plus-img {
-    transform: rotate(45deg);
+label input:checked~
+.mem-block .title {
+    color: black;
 }
